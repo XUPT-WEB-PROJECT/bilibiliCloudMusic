@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.AlbumMapper">
+
+    <select id="searchAlbumByAlbumName" resultType="Album">
+        SELECT * FROM album WHERE albumName LIKE CONCAT('%',#{param1},'%')
+    </select>
+
+    <select id="searchAlbumBySingerId" resultType="Album">
+        SELECT * FROM album WHERE singerId = #{param1}
+    </select>
+
+    <select id="searchAlbumByMusicId" resultType="Album">
+        SELECT *
+        FROM album
+        WHERE albumId = (
+	        SELECT albumId
+	        FROM music
+	        WHERE musicId = #{param1}
+        )
+    </select>
+
+    <insert id="favorAlbum">
+        INSERT INTO favorAlbum (`albumId`,`userId`)
+        SELECT #{param2}, #{param1}
+        FROM dual
+        WHERE EXISTS (
+            SELECT *
+            FROM album
+            WHERE albumId = #{param2}
+        ) AND NOT EXISTS (
+            SELECT *
+            FROM favorAlbum
+            WHERE albumId = #{param2} AND userId = #{param1}
+        )
+    </insert>
+
+    <delete id="unFavorAlbum">
+        DELETE FROM favorAlbum WHERE userId = #{param1} AND albumId = #{param2}
+    </delete>
+
+</mapper>

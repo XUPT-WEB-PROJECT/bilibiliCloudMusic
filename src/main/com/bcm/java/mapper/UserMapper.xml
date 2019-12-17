@@ -8,4 +8,48 @@
         SELECT * FROM user WHERE userName = #{param1} AND userKey = #{param2}
     </select>
 
+    <insert id="register" useGeneratedKeys="true">
+        INSERT INTO user (`userName`, `userKey`) VALUES (#{param1}, #{param2})
+    </insert>
+
+    <select id="searchUserByUserName" resultType="User">
+        SELECT * FROM user WHERE userName = #{param1}
+    </select>
+
+    <select id="getFollowingByUserId" resultType="User">
+        SELECT DISTINCT user.userId,userName,userAvatar,followDate
+        FROM user,userRelation
+        WHERE user.userId IN (
+            SELECT userId
+            FROM userRelation
+            WHERE followerId = #{param1}
+        )
+        AND userRelation.followerId = #{param1}
+    </select>
+
+    <select id="getFollowerByUserId" resultType="User">
+        SELECT userId,userName,userAvatar
+        FROM user
+        WHERE userId IN (
+            SELECT followerId
+            FROM userRelation
+            WHERE userId = #{param1}
+        )
+    </select>
+
+    <insert id="following">
+        INSERT INTO userRelation (`userId`,`followerId`,`followDate`)
+        SELECT #{param1},#{param2},CURDATE()
+        FROM dual
+        WHERE NOT EXISTS(
+            SELECT userId,followerId
+            FROM userRelation
+            WHERE userId = #{param1} AND followerId = #{param2}
+        )
+    </insert>
+
+    <delete id="unFollow">
+        DELETE FROM userRelation WHERE userId = #{param1} AND followerId = #{param2}
+    </delete>
+
 </mapper>

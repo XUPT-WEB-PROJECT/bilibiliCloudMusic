@@ -14,14 +14,14 @@
     </typeAliases>
 
     <!-- 分页工具的配置 -->
-<!--    <plugins>-->
-<!--        &lt;!&ndash;PageInterceptor放在了com.zih.utils包下&ndash;&gt;-->
-<!--        <plugin interceptor="com.github.pagehelper.PageInterceptor">-->
-<!--            &lt;!&ndash; config params as the following &ndash;&gt;-->
-<!--            &lt;!&ndash;<!–分页参数合理化 –> &ndash;&gt;-->
-<!--            <property name="reasonable" value="true" />-->
-<!--        </plugin>-->
-<!--    </plugins>-->
+    <plugins>
+        <!--PageInterceptor放在了com.zih.utils包下-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- config params as the following-->
+            <!--<!–分页参数合理化 –>-->
+            <property name="reasonable" value="true" />
+        </plugin>
+    </plugins>
 
     <mappers>
         <package name="mapper"/>

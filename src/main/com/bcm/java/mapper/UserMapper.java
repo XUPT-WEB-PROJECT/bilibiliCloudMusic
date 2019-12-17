@@ -4,6 +4,8 @@ import bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 
 public interface UserMapper {
 
@@ -11,8 +13,15 @@ public interface UserMapper {
     User login(@Param("userName") String userName, @Param("userKey") String pwd);
 
     //register
-    boolean register(String username, String password);
+    int register(@Param("userName") String userName, @Param("userKey") String pwd);
 
-    //根据用户名找用户
-    User findUserByUserName(String username);
+    User searchUserByUserName(@Param("userName") String userName);
+
+    List<User> getFollowingByUserId(@Param("userId") Integer userId);
+
+    List<User> getFollowerByUserId(@Param("userId") Integer userId);
+
+    int following(@Param("userId") Integer userId, @Param("followerId") Integer followerId);
+
+    int unFollow(@Param("userId") Integer userId, @Param("followerId") Integer followerId);
 }

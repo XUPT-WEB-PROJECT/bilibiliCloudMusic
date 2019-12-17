@@ -2,18 +2,18 @@ package bean;
 
 public class User {
     private int userId;
-    private String name;
-    private String key;
+    private String userName;
+    private String userKey;
     private String userAvatar;
     private int followNum;
     private int fansNum;
 
     public User(){ }
 
-    public User(int userId, String name, String key, String userAvatar, int followNum, int fansNum) {
+    public User(int userId, String userName, String userKey, String userAvatar, int followNum, int fansNum) {
         this.userId = userId;
-        this.name = name;
-        this.key = key;
+        this.userName = userName;
+        this.userKey = userKey;
         this.userAvatar = userAvatar;
         this.followNum = followNum;
         this.fansNum = fansNum;
@@ -26,12 +26,12 @@ public class User {
         this.userId = userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setUserKey(String userKey) {
+        this.userKey = userKey;
     }
 
     public void setUserAvatar(String userAvatar) {
@@ -50,12 +50,12 @@ public class User {
         return userId;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public String getKey() {
-        return key;
+    public String getUserKey() {
+        return userKey;
     }
 
     public String getUserAvatar() {

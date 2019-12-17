@@ -70,7 +70,6 @@
         <property name="basePackage" value="com.bcm.mapper"/>
     </bean>
 
-
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 请求编码格式 -->
         <property name="defaultEncoding" value="utf-8"/>
