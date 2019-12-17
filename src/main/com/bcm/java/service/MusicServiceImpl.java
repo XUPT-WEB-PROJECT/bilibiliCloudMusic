@@ -2,9 +2,11 @@ package service;
 
 import bean.Music;
 import mapper.MusicMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MusicServiceImpl implements MusicService {
 
     private MusicMapper musicMapper;

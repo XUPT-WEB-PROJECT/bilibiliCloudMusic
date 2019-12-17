@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.FavorMapper">
+
+    <select id="getFavorAlbum" resultType="Album">
+        SELECT album.*
+        FROM favorAlbum,album
+        WHERE userId = #{param1}
+            AND favorAlbum.albumId = album.albumId;
+    </select>
+
+    <select id="getFavorMusic" resultType="Music">
+        SELECT music.*
+        FROM favorMusic,music
+        WHERE userId = #{param1}
+            AND favorMusic.musicId = music.musicId;
+    </select>
+
+    <select id="getFavorSinger" resultType="Singer">
+        SELECT singer.*
+        FROM followSinger,singer
+        WHERE userId = #{param1}
+            AND followSinger.singerId = singer.singerId;
+    </select>
+
+    <select id="getFollowing" resultType="User">
+        SELECT user.*
+        FROM userRelation,user
+        WHERE userRelation.userId = #{param1}
+            AND userRelation.followerId = singer.singerId;
+    </select>
+
+    <select id="getFollower" resultType="User">
+        SELECT user.*
+        FROM userRelation,user
+        WHERE userRelation.userId = #{param1}
+            AND userRelation.userId = singer.singerId;
+    </select>
+
+    <select id="getBlog" resultType="Blog">
+        SELECT * FROM blog WHERE userId = #{param1}
+    </select>
+
+</mapper>

@@ -36,7 +36,7 @@ public class AlbumController {
     @ResponseBody
     @RequestMapping(value = "/searchAlbumBySingerId",produces = {"application/json;charset=UTF-8"})
     public Object searchAlbumBySingerId(Integer singerId, Integer pn, Integer pSize){
-        if(ParamJudge.isPositive(singerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(singerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         if(pn == null || pn < 0) pn = 1;
         if(pSize == null || pSize < 0) pSize = 10;
         PageHelper.startPage(pn, pSize);
@@ -47,7 +47,7 @@ public class AlbumController {
     @ResponseBody
     @RequestMapping(value = "/searchAlbumByMusicId",produces = {"application/json;charset=UTF-8"})
     public Object searchAlbumByMusicId(Integer musicId){
-        if(ParamJudge.isPositive(musicId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(musicId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         Album album = albumService.searchAlbumByMusicId(musicId);
         if(album == null) return "{\"errCode\":7,\"errMsg\":\"albumId不存在！\"}";
         return new JSONObject(album).put("errCode",0).toString();
@@ -56,7 +56,7 @@ public class AlbumController {
     @ResponseBody
     @RequestMapping(value = "/favorAlbum",produces = {"application/json;charset=UTF-8"})
     public Object favorAlbum(Integer userId, Integer albumId){
-        if(ParamJudge.isPositive(userId, albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId, albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         int re =  albumService.favorAlbum(userId, albumId);
         if(re == 1) return "{\"errCode\":0,\"errMsg\":\"收藏成功！\"}";
         return "{\"errCode\":5,\"errMsg\":\"已经收藏或者参数albumId无效！\"}";
@@ -65,7 +65,7 @@ public class AlbumController {
     @ResponseBody
     @RequestMapping(value = "/unFavorAlbum",produces = {"application/json;charset=UTF-8"})
     public Object unFavorAlbum(Integer userId, Integer albumId){
-        if(ParamJudge.isPositive(userId, albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId, albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         int re =  albumService.unFavorAlbum(userId, albumId);
         if(re == 1) return "{\"errCode\":0,\"errMsg\":\"取消收藏成功！\"}";
         return "{\"errCode\":5,\"errMsg\":\"收藏关系不存在！\"}";

@@ -19,9 +19,6 @@ public class User {
         this.fansNum = fansNum;
     }
 
-    public User(String userName, String password) {
-    }
-
     public void setUserId(int userId) {
         this.userId = userId;
     }

@@ -5,7 +5,10 @@
 <mapper namespace="mapper.AlbumMapper">
 
     <select id="searchAlbumByAlbumName" resultType="Album">
-        SELECT * FROM album WHERE albumName LIKE CONCAT('%',#{param1},'%')
+        SELECT album.*, singer.singerName
+        FROM album,singer
+        WHERE albumName LIKE CONCAT('%',#{param1},'%')
+        AND album.singerId = singer.singerId
     </select>
 
     <select id="searchAlbumBySingerId" resultType="Album">
@@ -13,13 +16,13 @@
     </select>
 
     <select id="searchAlbumByMusicId" resultType="Album">
-        SELECT *
-        FROM album
+        SELECT album.*, singer.singerName
+        FROM album,singer
         WHERE albumId = (
 	        SELECT albumId
 	        FROM music
 	        WHERE musicId = #{param1}
-        )
+        ) AND album.singerId = singer.singerId
     </select>
 
     <insert id="favorAlbum">

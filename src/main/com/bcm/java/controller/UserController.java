@@ -12,7 +12,6 @@ import service.UserService;
 import util.MD5Util;
 import util.ParamJudge;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -56,7 +55,7 @@ public class UserController {
 
     @RequestMapping(value = "/getFollowingByUserId",produces = {"application/json;charset=UTF-8"})
     public Object getFollowingByUserId(Integer userId, Integer pn, Integer pSize){
-        if(ParamJudge.isPositive(userId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         if(pn == null || pn < 0) pn = 1;
         if(pSize == null || pSize < 0) pSize = 10;
         PageHelper.startPage(pn, pSize);
@@ -66,7 +65,7 @@ public class UserController {
 
     @RequestMapping(value = "/getFollowerByUserId",produces = {"application/json;charset=UTF-8"})
     public Object getFollowerByUserId(Integer userId, Integer pn, Integer pSize){
-        if(ParamJudge.isPositive(userId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         if(pn == null || pn < 0) pn = 1;
         if(pSize == null || pSize < 0) pSize = 10;
         PageHelper.startPage(pn, pSize);
@@ -76,7 +75,7 @@ public class UserController {
 
     @RequestMapping(value = "/following",produces = {"application/json;charset=UTF-8"})
     public Object following(Integer userId, Integer followerId){
-        if(ParamJudge.isPositive(userId, followerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId, followerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         int re =  userService.following(userId, followerId);
         if(re == 1) return "{\"errCode\":0,\"errMsg\":\"关注成功！\"}";
         return "{\"errCode\":5,\"errMsg\":\"关注关系已存在！\"}";
@@ -84,7 +83,7 @@ public class UserController {
 
     @RequestMapping(value = "/unFollow",produces = {"application/json;charset=UTF-8"})
     public Object unFollow(Integer userId, Integer followerId){
-        if(ParamJudge.isPositive(userId, followerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        if(ParamJudge.isNOTPositive(userId, followerId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         int re = userService.unFollow(userId, followerId);
         if(re == 1) return "{\"errCode\":0,\"errMsg\":\"取关成功！\"}";
         return "{\"errCode\":6,\"errMsg\":\"取消关注关系不存在！\"}";

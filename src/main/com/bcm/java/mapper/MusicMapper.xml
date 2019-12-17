@@ -4,15 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.MusicMapper">
 
-    <select id="searchMusicByAlbumId">
-        SELECT * FROM music WHERE albumId = #{param1}
+    <select id="searchMusicByAlbumId" resultType="Music">
+        SELECT music.*, singer.singerName
+        FROM music,singer
+        WHERE albumId = #{param1}
+        AND music.singerId = singer.singerId
     </select>
 
-    <select id="searchMusicByMusicName">
-        SELECT * FROM music WHERE albumId LIKE CONCAT('%',#{param1},'%')
+    <select id="searchMusicByMusicName" resultType="Music">
+        SELECT music.*, singer.singerName
+        FROM music,singer
+        WHERE musicName LIKE CONCAT('%',#{param1},'%')
+             AND music.singerId = singer.singerId
     </select>
 
-    <select id="searchMusicBySingerId">
+    <select id="searchMusicBySingerId" resultType="Music">
         SELECT * FROM music WHERE singerId = #{param1}
     </select>
 

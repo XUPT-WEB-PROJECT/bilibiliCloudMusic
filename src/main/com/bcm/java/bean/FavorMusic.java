@@ -6,6 +6,8 @@ public class FavorMusic {
 
     private int musicId;
 
+    public FavorMusic(){}
+
     public FavorMusic(int userId, int musicId) {
         this.userId = userId;
         this.musicId = musicId;

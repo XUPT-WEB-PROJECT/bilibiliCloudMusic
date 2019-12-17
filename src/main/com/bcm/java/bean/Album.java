@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Date;
+
 public class Album {
 
     private int albumId;
@@ -10,15 +12,20 @@ public class Album {
 
     private int singerId;
 
+    private String singerName;
+
     private String albumIntro;
 
-    private String albumIssueDate;
+    private Date albumIssueDate;
 
-    public Album(int albumId, String albumName, String albumPicture, int singerId, String albumIntro, String albumIssueDate) {
+    public Album(){}
+
+    public Album(int albumId, String albumName, String albumPicture, int singerId, String singerName, String albumIntro, Date albumIssueDate) {
         this.albumId = albumId;
         this.albumName = albumName;
         this.albumPicture = albumPicture;
         this.singerId = singerId;
+        this.singerName = singerName;
         this.albumIntro = albumIntro;
         this.albumIssueDate = albumIssueDate;
     }
@@ -55,6 +62,14 @@ public class Album {
         this.singerId = singerId;
     }
 
+    public String getSingerName() {
+        return singerName;
+    }
+
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
+    }
+
     public String getAlbumIntro() {
         return albumIntro;
     }
@@ -63,11 +78,11 @@ public class Album {
         this.albumIntro = albumIntro;
     }
 
-    public String getAlbumIssueDate() {
+    public Date getAlbumIssueDate() {
         return albumIssueDate;
     }
 
-    public void setAlbumIssueDate(String albumIssueDate) {
+    public void setAlbumIssueDate(Date albumIssueDate) {
         this.albumIssueDate = albumIssueDate;
     }
 }

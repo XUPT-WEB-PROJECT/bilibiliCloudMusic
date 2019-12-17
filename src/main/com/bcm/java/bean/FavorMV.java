@@ -6,6 +6,8 @@ public class FavorMV {
 
     private int userId;
 
+    public FavorMV(){}
+
     public FavorMV(int MVId, int userId) {
         this.MVId = MVId;
         this.userId = userId;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.SingerMapper">
+
+    <select id="searchSingerBySingerId" resultType="Singer">
+        SELECT * FROM singer WHERE singerId = #{param1}
+    </select>
+
+    <select id="searchSingerBySingerName" resultType="Singer">
+        SELECT * FROM singer WHERE singerName LIKE CONCAT('%',#{param1},'%')
+    </select>
+
+    <select id="searchSingerByAlbumId" resultType="Singer">
+        SELECT singer.*
+        FROM singer,album
+        WHERE EXISTS (
+            SELECT albumId
+            FROM album
+            WHERE albumId = #{param1}
+        ) AND albumId = #{param1} AND singer.singerId = album.singerId
+    </select>
+
+</mapper>

@@ -8,20 +8,22 @@ public class Music {
 
     private int singerId;
 
-    private int albumId;
+    private String singerName;
 
-    private int MVId;
+    private int albumId;
 
     private String musicURL;
 
     private String lyricURL;
 
-    public Music(int musicId, String userName, int singerId, int albumId, int MVId, String musicURL, String lyricURL) {
+    public Music(){}
+
+    public Music(int musicId, String userName, int singerId, String singerName, int albumId, String musicURL, String lyricURL) {
         this.musicId = musicId;
         this.userName = userName;
         this.singerId = singerId;
+        this.singerName = singerName;
         this.albumId = albumId;
-        this.MVId = MVId;
         this.musicURL = musicURL;
         this.lyricURL = lyricURL;
     }
@@ -50,20 +52,20 @@ public class Music {
         this.singerId = singerId;
     }
 
+    public String getSingerName() {
+        return singerName;
+    }
+
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
+    }
+
     public int getAlbumId() {
         return albumId;
     }
 
     public void setAlbumId(int albumId) {
         this.albumId = albumId;
-    }
-
-    public int getMVId() {
-        return MVId;
-    }
-
-    public void setMVId(int MVId) {
-        this.MVId = MVId;
     }
 
     public String getMusicURL() {
@@ -81,4 +83,5 @@ public class Music {
     public void setLyricURL(String lyricURL) {
         this.lyricURL = lyricURL;
     }
+
 }
