@@ -44,11 +44,11 @@ public class SingerController {
 
     @ResponseBody
     @RequestMapping(value = "/searchSingerByAlbumId", produces = {"application/json;charset=UTF-8"})
-    public Object searchSingerByAlbumId(String albumId){
-        if(StringUtil.isEmpty(albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+    public Object searchSingerByAlbumId(Integer albumId){
+        if(ParamJudge.isNOTPositive(albumId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         Singer singer = singerService.searchSingerByAlbumId(albumId);
         if (singer != null) return new JSONObject(singer).put("errCode",0).toString();
-        return "{\"errCode\":0,\"errMsg\":\"albumId无效！\"}";
+        return "{\"errCode\":8,\"errMsg\":\"albumId无效！\"}";
     }
 
 }

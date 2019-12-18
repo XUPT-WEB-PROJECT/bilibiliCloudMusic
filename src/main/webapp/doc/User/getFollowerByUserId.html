@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getFollowerByUserId</title>
+</head>
+<body>
+<h1>User接口文档</h1>
+
+<h2>按用户ID获取关注者</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/getFollowerByUserId<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户Id：userId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面大小: pSize&nbsp;&nbsp;(缺省为10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页数:pn&nbsp;&nbsp;(缺省为1)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取成功：{"pageNum":1,"pageSize":10,"size":4,"startRow":1,"endRow":4,"total":4,"pages":1,"list":[{"userId":3,"userName":"lmy","userKey":null,"userAvatar":"http://q2k4voixl.bkt.clouddn.com/image/jpg/20191217003604.jpg","followNum":0,"fansNum":0},{"userId":5,"userName":"lnn","userKey":null,"userAvatar":"http://q2k4voixl.bkt.clouddn.com/image/png/%E9%BB%98%E8%AE%A4%E5%A4%B4%E5%83%8F.png","followNum":0,"fansNum":0},{"userId":6,"userName":"lwb","userKey":null,"userAvatar":"http://q2k4voixl.bkt.clouddn.com/image/png/%E9%BB%98%E8%AE%A4%E5%A4%B4%E5%83%8F.png","followNum":0,"fansNum":0},{"userId":7,"userName":"qst","userKey":null,"userAvatar":"http://q2k4voixl.bkt.clouddn.com/image/png/%E9%BB%98%E8%AE%A4%E5%A4%B4%E5%83%8F.png","followNum":0,"fansNum":0}],"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"firstPage":1,"lastPage":1}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取失败：{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

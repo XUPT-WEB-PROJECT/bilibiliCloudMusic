@@ -46,5 +46,8 @@ public class UserServiceImpl implements UserService {
         return userMapper.unFollow(userId, followerId);
     }
 
-
+    @Override
+    public User searchUserByUserId(Integer userId) {
+        return userMapper.searchUserByUserId(userId);
+    }
 }

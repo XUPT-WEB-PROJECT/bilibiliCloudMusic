@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>following</title>
+</head>
+<body>
+<h1>User接口文档</h1>
+
+<h2>按用户ID和关注者ID达成关注</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/following<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户Id：userId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注者Id：followerId<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注成功：{"errCode":0,"errMsg":"关注成功！"}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关注失败：{"errCode":5,"errMsg":"关注关系已存在！"}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

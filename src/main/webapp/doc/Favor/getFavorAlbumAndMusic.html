@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getFavorAlbumAndMusic</title>
+</head>
+<body>
+<h1>Favor接口文档</h1>
+
+<h2>查询用户喜欢的专辑与音乐</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/getFavorAlbumAndMusic<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户Id：userId<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请求成功：{"music":[{"singerId":3,"musicId":9,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E9%9F%B3%E9%A2%91%E6%80%AA%E7%89%A9%20-%20%E7%90%B4%E5%B8%88.mp3","albumId":4,"lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E7%90%B4%E5%B8%88-%E9%9F%B3%E9%A2%91%E6%80%AA%E7%89%A9.lrc"}],"album":[]}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"music":[],"album":[]}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请求失败：{"errCode":11,"errMsg":"无效的userId！"}
+</body>
+</html>

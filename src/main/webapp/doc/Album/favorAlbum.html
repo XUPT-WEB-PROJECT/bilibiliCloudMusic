@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>favorAlbum</title>
+</head>
+<body>
+<h1>Album接口文档</h1>
+
+<h2>按用户ID和专辑ID获取收藏Album</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/favorAlbum<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户ID：userId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;专辑ID：albumId<br>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收藏成功：{"errCode":0,"errMsg":"收藏成功！"}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收藏失败：{"errCode":5,"errMsg":"已经收藏或者参数albumId无效！"}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

@@ -23,4 +23,7 @@ public interface UserMapper {
     int following(@Param("userId") Integer userId, @Param("followerId") Integer followerId);
 
     int unFollow(@Param("userId") Integer userId, @Param("followerId") Integer followerId);
+
+    User searchUserByUserId(Integer userId);
+
 }

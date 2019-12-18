@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getBlog</title>
+</head>
+<body>
+<h1>Favor接口文档</h1>
+
+<h2>查询用户Blog</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/getBlog<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户Id：userId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面大小: pSize&nbsp;&nbsp;(缺省为10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页数:pn&nbsp;&nbsp;(缺省为1)<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应示例:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请求成功：{"pageNum":1,"pageSize":10,"size":1,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"blogId":0,"userId":1,"blog":"hello","musicId":1,"blogPic":"http://q2k4voixl.bkt.clouddn.com/image/jpg/%E8%AE%B8%E5%B5%A9.jpg"}],"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"firstPage":1,"lastPage":1}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请求失败：{"errCode":11,"errMsg":"无效的userId！"}
+</body>
+</html>

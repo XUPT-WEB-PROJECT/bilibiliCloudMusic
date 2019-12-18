@@ -25,18 +25,18 @@
             AND followSinger.singerId = singer.singerId;
     </select>
 
-    <select id="getFollowing" resultType="User">
+    <select id="getUserFollowing" resultType="User">
         SELECT user.*
         FROM userRelation,user
         WHERE userRelation.userId = #{param1}
-            AND userRelation.followerId = singer.singerId;
+            AND userRelation.followerId = user.userId;
     </select>
 
-    <select id="getFollower" resultType="User">
+    <select id="getUserFollower" resultType="User">
         SELECT user.*
         FROM userRelation,user
         WHERE userRelation.userId = #{param1}
-            AND userRelation.userId = singer.singerId;
+            AND userRelation.userId = user.userId;
     </select>
 
     <select id="getBlog" resultType="Blog">

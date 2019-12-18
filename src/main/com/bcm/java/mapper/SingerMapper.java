@@ -10,6 +10,6 @@ public interface SingerMapper {
 
     List<Singer> searchSingerBySingerName(String singerName);
 
-    Singer searchSingerByAlbumId(String albumId);
+    Singer searchSingerByAlbumId(Integer albumId);
 
 }

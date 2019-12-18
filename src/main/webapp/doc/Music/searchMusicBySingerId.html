@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchMusicBySingerId</title>
+</head>
+<body>
+<h1>接口文档</h1>
+
+<h2>按歌手ID获取音乐接口</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/searchMusicBySingerId<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌手ID：singerId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面大小: pSize&nbsp;&nbsp;(缺省为10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页数:pn&nbsp;&nbsp;(缺省为1)<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索成功：{"pageNum":1,"pageSize":10,"size":5,"startRow":1,"endRow":5,"total":5,"pages":1,"list":[{"musicId":0,"userName":null,"singerId":1,"singerName":null,"albumId":0,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E5%BC%B9%E6%8C%87%E4%B8%80%E6%8C%A5%E9%97%B4.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9%20-%20%E5%BC%B9%E6%8C%87%E4%B8%80%E6%8C%A5%E9%97%B4.lrc"},{"musicId":1,"userName":null,"singerId":1,"singerName":null,"albumId":0,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%A2%A7%E6%A1%90%E7%81%AF.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9%20-%20%E6%A2%A7%E6%A1%90%E7%81%AF.lrc"},{"musicId":2,"userName":null,"singerId":1,"singerName":null,"albumId":0,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E5%B1%B1%E6%B0%B4%E4%B9%8B%E9%97%B4.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9%20-%20%E5%B1%B1%E6%B0%B4%E4%B9%8B%E9%97%B4.lrc"},{"musicId":3,"userName":null,"singerId":1,"singerName":null,"albumId":0,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%E3%80%81%E9%BB%84%E9%BE%84%20-%20%E6%83%8A%E9%B8%BF%E4%B8%80%E9%9D%A2.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9&%E9%BB%84%E9%BE%84%20-%20%E6%83%8A%E9%B8%BF%E4%B8%80%E9%9D%A2.lrc"},{"musicId":4,"userName":null,"singerId":1,"singerName":null,"albumId":1,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9%20-%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F.lrc"}],"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"firstPage":1,"lastPage":1}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索失败：{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

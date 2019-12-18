@@ -20,4 +20,6 @@ public interface UserService {
 
     int unFollow(Integer userId, Integer followerId);
 
+    User searchUserByUserId(Integer userId);
+
 }

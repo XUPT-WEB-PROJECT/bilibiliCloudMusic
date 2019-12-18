@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchMusicByMusicName</title>
+</head>
+<body>
+<h1>接口文档</h1>
+
+<h2>按音乐名称获取音乐接口</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/searchMusicByMusicName<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;音乐名称：musicName<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面大小: pSize&nbsp;&nbsp;(缺省为10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页数:pn&nbsp;&nbsp;(缺省为1)<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取成功：{"pageNum":1,"pageSize":10,"size":1,"startRow":1,"endRow":1,"total":1,"pages":1,"list":[{"musicId":4,"userName":null,"singerId":1,"singerName":"许嵩","albumId":1,"musicURL":"http://q2k4voixl.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F.mp3","lyricURL":"http://q2k4voixl.bkt.clouddn.com/music/lrc%E8%AE%B8%E5%B5%A9%20-%20%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F.lrc"}],"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"firstPage":1,"lastPage":1}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获取失败：{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

@@ -26,7 +26,7 @@ public class SingerServiceImpl implements SingerService {
     }
 
     @Override
-    public Singer searchSingerByAlbumId(String albumId) {
+    public Singer searchSingerByAlbumId(Integer albumId) {
         return singerMapper.searchSingerByAlbumId(albumId);
     }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchAlbumBySingerId</title>
+</head>
+<body>
+<h1>Album接口文档</h1>
+
+<h2>登按歌手ID获取专辑</h2>
+
+&nbsp;&nbsp;&nbsp;&nbsp;请求地址:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://49.233.166.221/bcm/searchAlbumBySingerId<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;请求参数:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌手ID：singerId<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面大小: pSize&nbsp;&nbsp;(缺省为10)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页数:pn&nbsp;&nbsp;(缺省为1)<br>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;响应信息:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索成功：{"pageNum":1,"pageSize":10,"size":2,"startRow":1,"endRow":2,"total":2,"pages":1,"list":[{"albumId":0,"albumName":"不如吃茶去","albumPicture":"http://q2k4voixl.bkt.clouddn.com/image/jpg%E4%B8%8D%E5%A6%82%E5%90%83%E8%8C%B6%E5%8E%BB%E4%B8%93%E8%BE%91%E5%B0%81%E9%9D%A2.jpg","singerId":1,"singerName":null,"albumIntro":"《不如吃茶去》是许嵩于2014年8月26日发行的专辑，由许嵩担任制作人并包揽词曲创作，共收录9首歌曲。","albumIssueDate":1408752000000},{"albumId":1,"albumName":"雅俗共赏","albumPicture":"http://q2k4voixl.bkt.clouddn.com/image/jpg%E9%9B%85%E4%BF%97%E5%85%B1%E8%B5%8F%E4%B8%93%E8%BE%91%E5%B0%81%E9%9D%A2.jpg","singerId":1,"singerName":null,"albumIntro":"雅俗共赏》是许嵩演唱的歌曲，由许嵩创作词曲，收录于许嵩2016年6月27日发行的音乐专辑《青年晚报》。\r\n2017年3月27日，许嵩凭借该歌曲获得东方风云榜音乐盛典“最佳唱作人”和“十大金曲”两大奖项。","albumIssueDate":1461715200000}],"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"firstPage":1,"lastPage":1}
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜索失败：{"pageNum":0,"pageSize":10,"size":0,"startRow":0,"endRow":0,"total":0,"pages":0,"list":[],"prePage":0,"nextPage":0,"isFirstPage":false,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[],"navigateFirstPage":0,"navigateLastPage":0,"firstPage":0,"lastPage":0}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"errCode":4,"errMsg":"参数错误！"}
+</body>
+</html>

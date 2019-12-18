@@ -5,7 +5,8 @@
 <mapper namespace="mapper.UserMapper">
 
     <select id="login" resultType="User">
-        SELECT * FROM user WHERE userName = #{param1} AND userKey = #{param2}
+        SELECT  fansNum,followNum,userAvatar,userName,userId
+        FROM user WHERE userName = #{param1} AND userKey = #{param2}
     </select>
 
     <insert id="register" useGeneratedKeys="true">
@@ -13,7 +14,8 @@
     </insert>
 
     <select id="searchUserByUserName" resultType="User">
-        SELECT * FROM user WHERE userName = #{param1}
+        SELECT fansNum,followNum,userAvatar,userName,userId
+        FROM user WHERE userName = #{param1}
     </select>
 
     <select id="getFollowingByUserId" resultType="User">
@@ -51,5 +53,10 @@
     <delete id="unFollow">
         DELETE FROM userRelation WHERE userId = #{param1} AND followerId = #{param2}
     </delete>
+
+    <select id="searchUserByUserId" resultType="User">
+        SELECT fansNum,followNum,userAvatar,userName
+        FROM user WHERE userId = #{param1}
+    </select>
 
 </mapper>

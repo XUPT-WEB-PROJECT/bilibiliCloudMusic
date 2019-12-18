@@ -49,7 +49,7 @@ public class AlbumController {
     public Object searchAlbumByMusicId(Integer musicId){
         if(ParamJudge.isNOTPositive(musicId)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
         Album album = albumService.searchAlbumByMusicId(musicId);
-        if(album == null) return "{\"errCode\":7,\"errMsg\":\"albumId不存在！\"}";
+        if(album == null) return "{\"errCode\":7,\"errMsg\":\"musicId无效！\"}";
         return new JSONObject(album).put("errCode",0).toString();
     }
 
