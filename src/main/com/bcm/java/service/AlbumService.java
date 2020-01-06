@@ -1,6 +1,7 @@
 package service;
 
 import bean.Album;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface AlbumService {
 
     int unFavorAlbum(int userId, int albumId);
 
+    JSONObject getAlbumPageInfo(String albumName);
 }

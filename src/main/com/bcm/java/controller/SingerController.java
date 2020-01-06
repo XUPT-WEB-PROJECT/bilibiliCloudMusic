@@ -51,4 +51,13 @@ public class SingerController {
         return "{\"errCode\":8,\"errMsg\":\"albumId无效！\"}";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/searchSingerPageInfo", produces = {"application/json;charset=UTF-8"})
+    public Object searchSingerPageInfo(String singerName){
+        if(StringUtil.isEmpty(singerName)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        JSONObject re = singerService.searchSingerInfoByName(singerName);
+        if(re == null) return "{\"errCode\":3,\"errMsg\":\"查无此人！\"}";
+        return re.toString();
+    }
+
 }

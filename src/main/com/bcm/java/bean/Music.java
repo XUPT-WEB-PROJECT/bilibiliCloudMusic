@@ -4,11 +4,17 @@ public class Music {
 
     private int musicId;
 
-    private String userName;
-
     private int singerId;
 
+    private String musicName;
+
     private String singerName;
+
+    private String albumName;
+
+    private String albumPicture;
+
+    private String MVPicture;
 
     private int albumId;
 
@@ -16,16 +22,22 @@ public class Music {
 
     private String lyricURL;
 
+    private String length;
+
     public Music(){}
 
-    public Music(int musicId, String userName, int singerId, String singerName, int albumId, String musicURL, String lyricURL) {
+    public Music(int musicId, int singerId, String musicName, String singerName, String albumName, String albumPicture, String MVPicture, int albumId, String musicURL, String lyricURL, String length) {
         this.musicId = musicId;
-        this.userName = userName;
         this.singerId = singerId;
+        this.musicName = musicName;
         this.singerName = singerName;
+        this.albumName = albumName;
+        this.albumPicture = albumPicture;
+        this.MVPicture = MVPicture;
         this.albumId = albumId;
         this.musicURL = musicURL;
         this.lyricURL = lyricURL;
+        this.length = length;
     }
 
     public int getMusicId() {
@@ -36,14 +48,6 @@ public class Music {
         this.musicId = musicId;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public int getSingerId() {
         return singerId;
     }
@@ -52,12 +56,44 @@ public class Music {
         this.singerId = singerId;
     }
 
+    public String getMusicName() {
+        return musicName;
+    }
+
+    public void setMusicName(String musicName) {
+        this.musicName = musicName;
+    }
+
     public String getSingerName() {
         return singerName;
     }
 
     public void setSingerName(String singerName) {
         this.singerName = singerName;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public String getAlbumPicture() {
+        return albumPicture;
+    }
+
+    public void setAlbumPicture(String albumPicture) {
+        this.albumPicture = albumPicture;
+    }
+
+    public String getMVPicture() {
+        return MVPicture;
+    }
+
+    public void setMVPicture(String MVPicture) {
+        this.MVPicture = MVPicture;
     }
 
     public int getAlbumId() {
@@ -84,4 +120,11 @@ public class Music {
         this.lyricURL = lyricURL;
     }
 
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
 }

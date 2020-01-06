@@ -16,4 +16,6 @@ public interface MusicService {
 
     int unFavorMusic(int userId, int musicId);
 
+    Music getMusicInfo(String musicName);
+
 }

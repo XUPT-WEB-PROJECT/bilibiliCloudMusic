@@ -5,7 +5,9 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.util.StringUtil;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import service.MusicService;
@@ -71,4 +73,12 @@ public class MusicController {
         return "{\"errCode\":10,\"errMsg\":\"已取消喜欢或musicId无效！\"}";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getMusicInfo",produces = {"application/json;charset=UTF-8"})
+    public Object getMusicInfo(String musicName){
+        if(StringUtils.isEmpty(musicName)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        Music music = musicService.getMusicInfo(musicName);
+        if(music == null) return "{\"errCode\":3,\"errMsg\":\"没有这样的歌曲！\"}";
+        return new JSONObject(music).toString();
+    }
 }

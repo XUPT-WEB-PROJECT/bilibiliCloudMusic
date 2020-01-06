@@ -22,4 +22,12 @@
         ) AND albumId = #{param1} AND singer.singerId = album.singerId
     </select>
 
+    <select id="cntMusicBySingerId" resultType="int">
+        SELECT COUNT(*) FROM music WHERE singerId = #{param1};
+    </select>
+
+    <select id="cntAlbumBySingerId" resultType="int">
+        SELECT COUNT(*) FROM album WHERE singerId = #{param1};
+    </select>
+
 </mapper>

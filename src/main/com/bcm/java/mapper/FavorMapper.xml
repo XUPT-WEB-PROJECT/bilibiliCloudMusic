@@ -12,10 +12,12 @@
     </select>
 
     <select id="getFavorMusic" resultType="Music">
-        SELECT music.*
-        FROM favorMusic,music
-        WHERE userId = #{param1}
-            AND favorMusic.musicId = music.musicId;
+        SELECT music.*,singerName,albumName
+        FROM favorMusic,music,singer,album
+        WHERE userId = 1
+            AND favorMusic.musicId = music.musicId
+            AND music.singerId = singer.singerId
+						AND music.albumId = album.albumId;
     </select>
 
     <select id="getFavorSinger" resultType="Singer">

@@ -41,4 +41,19 @@
         DELETE FROM favorAlbum WHERE userId = #{param1} AND albumId = #{param2}
     </delete>
 
+    <select id="searchPageMusicBySingerId" resultType="Music">
+        SELECT music.*, albumName, albumPicture
+        FROM music,album
+        WHERE music.singerId = #{param1} AND music.albumId = album.albumId
+        LIMIT 10 OFFSET 0
+    </select>
+
+    <select id="getMusicInfo" resultType="Music">
+        SELECT music.*, singer.singerName, albumName, albumPicture
+        FROM music,singer,album
+        WHERE musicName = #{param1}
+        AND music.singerId = singer.singerId
+        AND music.albumId = album.albumId
+    </select>
+
 </mapper>

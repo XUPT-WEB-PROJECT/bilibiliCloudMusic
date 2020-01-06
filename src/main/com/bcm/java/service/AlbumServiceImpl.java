@@ -1,7 +1,10 @@
 package service;
 
 import bean.Album;
+import bean.Music;
 import mapper.AlbumMapper;
+import mapper.MusicMapper;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,9 +13,11 @@ import java.util.List;
 public class AlbumServiceImpl implements AlbumService {
 
     private AlbumMapper albumMapper;
+    private MusicMapper musicMapper;
 
-    public AlbumServiceImpl(AlbumMapper albumMapper) {
+    public AlbumServiceImpl(AlbumMapper albumMapper, MusicMapper musicMapper) {
         this.albumMapper = albumMapper;
+        this.musicMapper = musicMapper;
     }
 
     @Override
@@ -38,5 +43,17 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public int unFavorAlbum(int uerId, int albumId) {
         return albumMapper.unFavorAlbum(uerId, albumId);
+    }
+
+    @Override
+    public JSONObject getAlbumPageInfo(String albumName) {
+        List<Album> albums = albumMapper.searchAlbumByAlbumName(albumName);
+        if(albums.size()==0) return null;
+        List<Music> musicList = musicMapper.searchMusicByAlbumId(albums.get(0).getAlbumId());
+        List<Album> albumList = albumMapper.searchAlbumBySingerId(albums.get(0).getSingerId());
+        JSONObject re = new JSONObject(albums.get(0));
+        re.put("musicList", musicList);
+        re.put("albumList", albumList);
+        return re;
     }
 }

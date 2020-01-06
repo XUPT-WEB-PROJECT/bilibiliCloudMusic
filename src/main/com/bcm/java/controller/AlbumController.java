@@ -71,4 +71,12 @@ public class AlbumController {
         return "{\"errCode\":5,\"errMsg\":\"收藏关系不存在！\"}";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getAlbumPageInfo",produces = {"application/json;charset=UTF-8"})
+    public Object getAlbumPageInfo(String albumName){
+        if(StringUtil.isEmpty(albumName)) return "{\"errCode\":4,\"errMsg\":\"参数错误！\"}";
+        JSONObject pageInfo =  albumService.getAlbumPageInfo(albumName);
+        if(pageInfo == null) return "{\"errCode\":3,\"errMsg\":\"没有这样的专辑！\"}";
+        return pageInfo.toString();
+    }
 }

@@ -2,6 +2,7 @@ package service;
 
 import bean.Music;
 import mapper.MusicMapper;
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,5 +40,13 @@ public class MusicServiceImpl implements MusicService {
     public int unFavorMusic(int userId, int musicId) {
         return musicMapper.unFavorMusic(userId, musicId);
     }
+
+    @Override
+    public Music getMusicInfo(String musicName) {
+        List<Music> musicList = musicMapper.getMusicInfo(musicName);
+        if(musicList.size()==0) return null;
+        return musicList.get(0);
+    }
+
 
 }
